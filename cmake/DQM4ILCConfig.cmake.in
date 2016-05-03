@@ -44,7 +44,7 @@ FIND_PATH( DQM4ILC_INCLUDE_DIRS
 
 
 # ---------- libraries --------------------------------------------------------
-INCLUDE( "MacroCheckPackageLibs.cmake" )
+INCLUDE( "@DQMCore_DIR@/cmake/MacroCheckPackageLibs.cmake" )
 
 # only standard libraries should be passed as arguments to CHECK_PACKAGE_LIBS
 # additional components are set by cmake in variable PKG_FIND_COMPONENTS
@@ -53,7 +53,7 @@ CHECK_PACKAGE_LIBS( DQM4ILC DQM4ILC )
 
 
 # ---------- dependencies -----------------------------------------------------
-INCLUDE( "MacroExportPackageDeps.cmake" )
+INCLUDE( "@DQMCore_DIR@/cmake/MacroExportPackageDeps.cmake" )
 # exports following package dependencies (if set)
 # first argument of macro should be the package name
 SET( DQM4ILC_DEPENDS_INCLUDE_DIRS  @DQM4ILC_DEPENDS_INCLUDE_DIRS@ )
