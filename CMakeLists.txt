@@ -76,6 +76,8 @@ ADD_SUBDIRECTORY( source )
 # Generate DQM4ILCeConfig.h
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.h.cmake.in"
     "${PROJECT_SOURCE_DIR}/source/common/include/${PROJECT_NAME}Config.h" @ONLY )
+    
+INSTALL ( DIRECTORY cmake DESTINATION . PATTERN "*.in" EXCLUDE )
 
 # display some variables and write them to cache
 DISPLAY_STD_VARIABLES()
