@@ -44,8 +44,8 @@ namespace dqm4ilc
 {
 
 DQMLcioReaderListener::DQMLcioReaderListener(IO::LCReader *pLCReader) :
-		m_pLCReader(pLCReader),
 		m_pEventClient(NULL),
+		m_pLCReader(pLCReader),
 		m_sleepTime(0),
 		m_simulateSpill(false),
 		m_previousTimeStamp(0),
@@ -117,21 +117,21 @@ void DQMLcioReaderListener::processEvent(EVENT::LCEvent *pLCEvent)
 
 //-------------------------------------------------------------------------------------------------
 
-void DQMLcioReaderListener::modifyEvent(EVENT::LCEvent *pLCEvent)
+void DQMLcioReaderListener::modifyEvent(EVENT::LCEvent * /*pLCEvent*/)
 {
  /* nop */
 }
 
 //-------------------------------------------------------------------------------------------------
 
-void DQMLcioReaderListener::processRunHeader(EVENT::LCRunHeader *pLCRunHeader)
+void DQMLcioReaderListener::processRunHeader(EVENT::LCRunHeader * /*pLCRunHeader*/)
 {
 	/* nop */
 }
 
 //-------------------------------------------------------------------------------------------------
 
-void DQMLcioReaderListener::modifyRunHeader(EVENT::LCRunHeader *pLCRunHeader)
+void DQMLcioReaderListener::modifyRunHeader(EVENT::LCRunHeader * /*pLCRunHeader*/)
 {
  /* nop */
 }
