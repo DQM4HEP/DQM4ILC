@@ -117,7 +117,7 @@ void DQMMarlin::init(const std::string &steeringFileName)
 
     pParser->parse();
 
-    marlin::Global::parameters = pParser->getParameters("Global")  ;
+    marlin::Global::parameters = pParser->getParameters("Global").get()  ;
 
     if( 0 == marlin::Global::parameters )
     {
@@ -256,7 +256,7 @@ void DQMMarlin::createProcessors(marlin::IParser *pParser)
 
     for(unsigned int i=0 ; i<  activeProcessors.size() ; i++ )
     {
-        marlin::StringParameters* pParameters = pParser->getParameters( activeProcessors[i] )  ;
+				std::shared_ptr<marlin::StringParameters> pParameters = pParser->getParameters( activeProcessors[i] )  ;
 
         if( pParameters != 0 )
         {
