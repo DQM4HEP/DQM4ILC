@@ -54,7 +54,10 @@ FIND_PACKAGE( Marlin REQUIRED )
 # ----- Find GEAR package -----
 FIND_PACKAGE( GEAR REQUIRED )
 
-FOREACH( pkg DQMCore LCIO xdrlcio Marlin GEAR )
+# ----- Find CLHEP package -----
+FIND_PACKAGE( CLHEP REQUIRED )
+
+FOREACH( pkg DQMCore LCIO xdrlcio Marlin GEAR CLHEP )
 
 	INCLUDE_DIRECTORIES( ${${pkg}_INCLUDE_DIRS} )
 	LINK_LIBRARIES( ${${pkg}_LIBRARIES} )
