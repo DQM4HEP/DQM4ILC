@@ -10,8 +10,8 @@ PROJECT( DQM4ILC )
 
 ### PACKAGE VERSIONS ########################################################
 SET( ${PROJECT_NAME}_VERSION_MAJOR 1 )
-SET( ${PROJECT_NAME}_VERSION_MINOR 2 )
-SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
+SET( ${PROJECT_NAME}_VERSION_MINOR 1 )
+SET( ${PROJECT_NAME}_VERSION_PATCH 3 )
 
 ###############################
 # Require C++11
@@ -54,7 +54,10 @@ FIND_PACKAGE( Marlin REQUIRED )
 # ----- Find GEAR package -----
 FIND_PACKAGE( GEAR REQUIRED )
 
-FOREACH( pkg DQMCore LCIO xdrlcio Marlin GEAR )
+# ----- Find CLHEP package -----
+FIND_PACKAGE( CLHEP REQUIRED )
+
+FOREACH( pkg DQMCore LCIO xdrlcio Marlin GEAR CLHEP )
 
 	INCLUDE_DIRECTORIES( ${${pkg}_INCLUDE_DIRS} )
 	LINK_LIBRARIES( ${${pkg}_LIBRARIES} )
